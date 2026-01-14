@@ -1,5 +1,6 @@
 // components/Principles.tsx
 import { FC } from "react";
+import { motion } from "framer-motion";
 
 const principles = [
   {
@@ -98,23 +99,54 @@ const Principles: FC = () => {
   return (
     <section className="bg-black py-16 px-6 text-center border-t border-[#E5E2E2]">
       {/* Heading */}
-      <h2 className="text-white text-4xl font-bold mb-6">
+      <motion.h2 
+        className="text-white text-4xl font-bold mb-6"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         <span>OUR </span>
         <span className="bg-gradient-to-r from-rose-600 to-cyan-700 bg-clip-text text-transparent uppercase">PRINciples</span>
-      </h2>
+      </motion.h2>
 
       {/* Underline with dot */}
-      <div className="flex justify-center items-center mb-12">
+      <motion.div 
+        className="flex justify-center items-center mb-12"
+        initial={{ opacity: 0, scaleX: 0 }}
+        whileInView={{ opacity: 1, scaleX: 1 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         <div className="w-3 h-3 rounded-full bg-pink-600 mr-2"></div>
         <div className="w-32 h-[1px] bg-gradient-to-r from-pink-600 to-white/40"></div>
-      </div>
+      </motion.div>
 
       {/* Items Grid */}
-      <div className="max-w-6xl mx-auto flex justify-between gap-8 flex-wrap">
+      <motion.div 
+        className="max-w-6xl mx-auto flex justify-between gap-8 flex-wrap"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+      >
         {principles.map(({ icon, title, gradient }, i) => (
-          <div
+          <motion.div
             key={i}
             className="flex flex-col items-center gap-4 text-white max-w-xs mx-auto"
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+            }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
           >
             <div
               className={`${gradient} p-6 rounded-full flex items-center justify-center`}
@@ -122,9 +154,9 @@ const Principles: FC = () => {
               {icon}
             </div>
             <p className="font-semibold text-lg">{title}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

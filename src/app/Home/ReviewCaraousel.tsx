@@ -1,5 +1,6 @@
 // components/CustomerCarousel.tsx
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 interface Testimonial {
   id: number;
@@ -105,46 +106,71 @@ const ReviewCarousel = () => {
   return (
     <section className="bg-black text-white py-8 md:py-16 px-9">
       {/* Heading */}
-      <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 px-4">
+      <motion.h2 
+        className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6 px-4"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         OUR{" "}
         <span className="bg-gradient-to-r from-rose-600 to-cyan-700 bg-clip-text text-transparent uppercase">
           Happy CUSTOMers
         </span>
-      </h2>
+      </motion.h2>
       
       {/* Underline */}
-      <div className="flex justify-center items-center mb-8 md:mb-12">
+      <motion.div 
+        className="flex justify-center items-center mb-8 md:mb-12"
+        initial={{ opacity: 0, scaleX: 0 }}
+        whileInView={{ opacity: 1, scaleX: 1 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-rose-600 mr-2"></div>
         <div className="w-16 md:w-24 h-[1px] bg-gray-400"></div>
-      </div>
+      </motion.div>
 
       {/* Carousel Container */}
-      <div className="relative">
+      <motion.div 
+        className="relative"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         {/* Navigation Buttons - Hidden on mobile, visible on tablet and up */}
-        <button
+        <motion.button
           onClick={prevTestimonial}
           aria-label="Previous testimonial"
           className="hidden sm:flex absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:-translate-x-6 text-2xl md:text-3xl font-bold text-rose-600 hover:text-cyan-700 transition-colors z-10 bg-black/50 rounded-full w-10 h-10 md:w-12 md:h-12 items-center justify-center"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           &#10094;
-        </button>
+        </motion.button>
 
-        <button
+        <motion.button
           onClick={nextTestimonial}
           aria-label="Next testimonial"
           className="hidden sm:flex absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-6 text-2xl md:text-3xl font-bold text-rose-600 hover:text-cyan-700 transition-colors z-10 bg-black/50 rounded-full w-10 h-10 md:w-12 md:h-12 items-center justify-center"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           &#10095;
-        </button>
+        </motion.button>
 
         {/* Carousel Content */}
         <div className="flex justify-center items-center space-x-4 md:space-x-6 overflow-hidden">
           {/* Mobile: Single card */}
-          <div className="sm:hidden w-full max-w-sm">
-            <div
-              key={testimonials[current].id}
-              className="bg-[#1F2022] rounded-2xl p-6 flex flex-col space-y-4 mx-auto"
-            >
+          <motion.div 
+            className="sm:hidden w-full max-w-sm"
+            key={testimonials[current].id}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <div className="bg-[#1F2022] rounded-2xl p-6 flex flex-col space-y-4 mx-auto">
               {/* Quotation icon */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -197,16 +223,20 @@ const ReviewCarousel = () => {
                 - {testimonials[current].name}
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Tablet and Desktop: Multiple cards */}
           <div className="hidden sm:flex justify-center items-center space-x-4 md:space-x-6">
             {testimonials
               .slice(current, current + testimonialsPerView)
-              .map(({ id, text, name }) => (
-                <div
+              .map(({ id, text, name }, index) => (
+                <motion.div
                   key={id}
                   className="bg-[#1F2022] rounded-2xl p-6 md:p-8 flex flex-col space-y-4 min-w-[280px] md:min-w-[320px] lg:min-w-[380px] flex-1 max-w-md"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
+                  whileHover={{ transition: { duration: 0.3 } }}
                 >
                   {/* Quotation icon */}
                   <svg
@@ -259,39 +289,55 @@ const ReviewCarousel = () => {
                   <p className="text-rose-600 font-semibold italic mt-auto text-base md:text-lg">
                     - {name}
                   </p>
-                </div>
+                </motion.div>
               ))}
           </div>
         </div>
 
         {/* Mobile Navigation Dots */}
-        <div className="flex justify-center items-center space-x-2 mt-6 sm:hidden">
+        <motion.div 
+          className="flex justify-center items-center space-x-2 mt-6 sm:hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           {testimonials.map((_, index) => (
-            <button
+            <motion.button
               key={index}
               onClick={() => setCurrent(index)}
               className={`w-2 h-2 rounded-full transition-colors ${
                 index === current ? "bg-rose-600" : "bg-gray-600"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
             />
           ))}
-        </div>
+        </motion.div>
 
         {/* Tablet+ Desktop Navigation Dots */}
-        <div className="hidden sm:flex justify-center items-center space-x-2 mt-8">
+        <motion.div 
+          className="hidden sm:flex justify-center items-center space-x-2 mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           {Array.from({ length: testimonials.length - testimonialsPerView + 1 }).map((_, index) => (
-            <button
+            <motion.button
               key={index}
               onClick={() => setCurrent(index)}
               className={`w-2 h-2 rounded-full transition-colors ${
                 index === current ? "bg-rose-600" : "bg-gray-600"
               }`}
               aria-label={`Go to slide ${index + 1}`}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
             />
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

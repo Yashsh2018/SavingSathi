@@ -309,6 +309,7 @@ export default function Navbar() {
                         initial={{ x: 50, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ delay: index * 0.1 }}
+                        onClick={() => setIsOpen(false)}
                       >
                         <Link
                           href={item.href}

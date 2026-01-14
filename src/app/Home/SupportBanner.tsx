@@ -1,26 +1,83 @@
 import Image from 'next/image';
 import ban from "@/assets/home/contact.png";
+import { motion } from "framer-motion";
 
 const SupportBanner: React.FC = () => {
   return (
     <section className="bg-[#1F2022] py-12 px-6">
-      <div className="flex flex-col md:flex-row items-center rounded-xl bg-gradient-to-r from-rose-600 to-cyan-700 max-w-7xl mx-auto">
+      <motion.div 
+        className="flex flex-col md:flex-row items-center rounded-xl bg-gradient-to-r from-rose-600 to-cyan-700 max-w-7xl mx-auto"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
         {/* Text Side with Gradient Background */}
-        <div className="flex-1 p-8 md:p-12 rounded-xl text-white max-w-7xl">
-          <h3 className="font-semibold uppercase text-sm md:text-base mb-2 tracking-wide">
+        <motion.div 
+          className="flex-1 p-8 md:p-12 rounded-xl text-white max-w-7xl"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+        >
+          <motion.h3 
+            className="font-semibold uppercase text-sm md:text-base mb-2 tracking-wide"
+            variants={{
+              hidden: { opacity: 0, y: -20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+            }}
+          >
             NEED HELP? WE’RE HERE!
-          </h3>
+          </motion.h3>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold mb-3 leading-tight"
+            variants={{
+              hidden: { opacity: 0, y: -20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+            }}
+          >
             Support That Cares SavingSathi
-          </h2>
+          </motion.h2>
 
-          <p className="text-gray-300 mb-6 max-w-lg text-sm md:text-base">
+          <motion.p 
+            className="text-gray-300 mb-6 max-w-lg text-sm md:text-base"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+            }}
+          >
             Have questions? Need help? Our team is here to assist you anytime. Reach out through:
-          </p>
+          </motion.p>
 
-          <ul className="flex gap-8 text-gray-300 font-semibold text-sm md:text-base">
-            <li className="flex items-center gap-2 cursor-pointer hover:text-white transition">
+          <motion.ul 
+            className="flex gap-8 text-gray-300 font-semibold text-sm md:text-base"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+          >
+            <motion.li 
+              className="flex items-center gap-2 cursor-pointer hover:text-white transition"
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+              }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 flex-shrink-0"
@@ -36,9 +93,16 @@ const SupportBanner: React.FC = () => {
                 />
               </svg>
               Live Chat
-            </li>
+            </motion.li>
 
-            <li className="flex items-center gap-2 cursor-pointer hover:text-white transition">
+            <motion.li 
+              className="flex items-center gap-2 cursor-pointer hover:text-white transition"
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+              }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 flex-shrink-0"
@@ -54,9 +118,16 @@ const SupportBanner: React.FC = () => {
                 />
               </svg>
               Call Support
-            </li>
+            </motion.li>
 
-            <li className="flex items-center gap-2 cursor-pointer hover:text-white transition">
+            <motion.li 
+              className="flex items-center gap-2 cursor-pointer hover:text-white transition"
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+              }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 flex-shrink-0"
@@ -69,10 +140,17 @@ const SupportBanner: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16v-4m0-4h.01" />
               </svg>
               Help Center
-            </li>
-          </ul>
-        </div>
-        <div className="relative w-100 h-50 flex-shrink-0 flex-col">
+            </motion.li>
+          </motion.ul>
+        </motion.div>
+        <motion.div 
+          className="relative w-100 h-50 flex-shrink-0 flex-col"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.05, rotate: 2 }}
+        >
             <Image
               src={ban} // Replace with the actual image path in public folder
               alt="banner"
@@ -81,8 +159,8 @@ const SupportBanner: React.FC = () => {
               sizes="100px"
               priority
             />
-          </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

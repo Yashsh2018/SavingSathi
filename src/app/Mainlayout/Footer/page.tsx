@@ -1,10 +1,33 @@
-import React from "react";
-import { FaApple, FaAndroid, FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa";
+'use client';
+
+import * as React from 'react';
+import { FaApple, FaAndroid, FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer: React.FC = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const handleNavClick = (href: string, event: React.MouseEvent) => {
+    if (href.startsWith('#')) {
+      event.preventDefault();
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 80; // Adjust for header height
+
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+
+      // Close mobile menu if open
+      setIsOpen(false);
+    }
+  };
+
   return (
     <footer className="bg-[#242424] text-white py-12 md:py-16 px-4 sm:px-6 lg:px-8 xl:px-28">
       {/* Download Buttons */}
@@ -51,17 +74,20 @@ const Footer: React.FC = () => {
 
           {/* Social Icons */}
           <div className="flex justify-center sm:justify-start space-x-3 md:space-x-4 mt-4">
-            <a href="https://www.facebook.com/people/Gen-Hap/pfbid05o4FAtx8HcQAk6XKYdYCQvbf7fmFWVi2jtpBi8YP9Ph4aiwavo1fGStiuJANJnPql/" aria-label="Facebook" className="bg-[#222222] p-2 md:p-3 text-base md:text-lg rounded-full hover:bg-pink-600 transition">
+            <a href="https://www.facebook.com/profile.php?id=61584385346591" aria-label="Facebook" className="bg-[#222222] p-2 md:p-3 text-base md:text-lg rounded-full hover:bg-pink-600 transition">
               <FaFacebookF />
             </a>
-            <a href="https://www.linkedin.com/company/Genhap/" aria-label="LinkedIn" className="bg-[#222222] p-2 md:p-3 text-base md:text-lg rounded-full hover:bg-blue-600 transition">
+            <a href="https://www.linkedin.com/company/savingsathi/" aria-label="LinkedIn" className="bg-[#222222] p-2 md:p-3 text-base md:text-lg rounded-full hover:bg-blue-600 transition">
               <FaLinkedinIn />
             </a>
-            <a href="https://www.instagram.com/Genhap_/?igsh=MTZibG4wN3AxMG45dw%3D%3D#" aria-label="Instagram" className="bg-[#222222] p-2 md:p-3 text-base md:text-lg rounded-full hover:bg-rose-600 transition">
+            <a href="https://www.instagram.com/savingsathi/" aria-label="Instagram" className="bg-[#222222] p-2 md:p-3 text-base md:text-lg rounded-full hover:bg-rose-600 transition">
               <FaInstagram />
             </a>
-            <a href="https://www.youtube.com/@Genhap-connectingpeople?si=SvJkJ2SBp8sWyAAc" aria-label="YouTube" className="bg-[#222222] p-2 md:p-3 text-base md:text-lg rounded-full hover:bg-red-600 transition">
+            <a href="https://www.youtube.com/@saving_sathi" aria-label="YouTube" className="bg-[#222222] p-2 md:p-3 text-base md:text-lg rounded-full hover:bg-red-600 transition">
               <FaYoutube />
+            </a>
+            <a href="https://x.com/SavingSathi" aria-label="Twitter" className="bg-[#222222] p-2 md:p-3 text-base md:text-lg rounded-full hover:bg-red-600 transition">
+              <FaTwitter />
             </a>
           </div>
         </div>
@@ -70,15 +96,16 @@ const Footer: React.FC = () => {
         <div className="text-center sm:text-left">
           <h4 className="font-bold text-white mb-4 md:mb-6 text-xl">Company News</h4>
           <ul className="space-y-2 md:space-y-2 text-white text-sm md:text-base">
+            
             <li>
-              <a href="#" className="hover:text-rose-600 transition block">Partners</a>
+              <a href="/blogs" className="hover:text-rose-600 transition block">Blogs</a>
             </li>
-            <li>
-              <a href="#" className="hover:text-rose-600 transition block">About Us</a>
+            <li   onClick={(e) => handleNavClick('#contact', e)}>
+              <a href="#contact" className="hover:text-rose-600 transition block">Contact</a>
             </li>
-            <li>
+            {/* <li>
               <a href="#" className="hover:text-rose-600 transition block">Reviews</a>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -104,9 +131,9 @@ const Footer: React.FC = () => {
             <li>
               <a href="#screenshots" className="hover:text-rose-600 transition block">Screenshots</a>
             </li>
-            <li>
+            {/* <li>
               <a href="#team" className="hover:text-rose-600 transition block">Team</a>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -137,13 +164,13 @@ const Footer: React.FC = () => {
 
       {/* Bottom Links */}
       <div className="mt-12 md:mt-16 flex flex-col md:flex-row justify-between items-center text-white text-sm md:text-base gap-4 md:gap-0">
-        <p className="text-center md:text-left">© 2025 | Alrights reserved by SavingSathi</p>
+        <p className="text-center md:text-left">© 2026 | Alrights reserved by SavingSathi</p>
         <div className="flex flex-wrap justify-center gap-2 md:gap-4">
-          <a href="faq" className="hover:text-rose-600 transition px-2 py-1">FAQ</a>
+          <a href="/faq" className="hover:text-rose-600 transition px-2 py-1">FAQ</a>
           <span className="hidden md:inline">|</span>
-          <a href="privacy-policy" className="hover:text-rose-600 transition px-2 py-1">Privacy Policy</a>
+          <a href="/privacy-policy" className="hover:text-rose-600 transition px-2 py-1">Privacy Policy</a>
           <span className="hidden md:inline">|</span>
-          <a href="terms-and-conditions" className="hover:text-rose-600 transition px-2 py-1">Term and Conditions</a>
+          <a href="/terms-and-conditions" className="hover:text-rose-600 transition px-2 py-1">Term and Conditions</a>
         </div>
       </div>
     </footer>

@@ -65,10 +65,10 @@ const GenhapHelps: React.FC = () => {
           YOU?
         </span>
       </h2>
-      <h1 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold max-w-4xl mx-auto leading-snug sm:leading-normal mb-4">
+      <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold max-w-4xl mx-auto leading-snug sm:leading-normal mb-4">
         More than Just a App, It's a world of <br className="hidden sm:block" />
         connections and opportunities
-      </h1>
+      </h2>
       <p className="text-xs sm:text-sm lg:text-base max-w-2xl lg:max-w-3xl mx-auto font-bold leading-relaxed text-gray-200">
         SavingSathi is your go-to platform for everyday needs. Whether you're
         exploring fashion, travel, fitness, education, health, electronics, or
