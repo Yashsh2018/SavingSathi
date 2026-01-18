@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import bg3 from "@/assets/home/bg-3.jpg";
+import bg3 from "../../assets/home/bg-3.jpg";
 
 // import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
