@@ -56,7 +56,6 @@ const Index = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time for all components (adjust as needed)
     const timer = setTimeout(() => {
       setLoading(false);
     }, 200);
