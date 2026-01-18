@@ -7,7 +7,7 @@ const nextConfig = {
 
   output: 'standalone', 
   images: {
-    unoptimized: true, // Netlify 上需要关闭图片优化
+    unoptimized: true,
   },
 }
 
