@@ -59,7 +59,7 @@ const Index = () => {
     // Simulate loading time for all components (adjust as needed)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 200); // 3 seconds, or replace with actual loading logic
+    }, 200);
 
     return () => clearTimeout(timer);
   }, []);
