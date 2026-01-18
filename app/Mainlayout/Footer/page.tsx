@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { FaApple, FaAndroid, FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
-import logo from "@/assets/logo.png";
+import logo from "../../../assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 

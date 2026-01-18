@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import Image from "next/image";
-import img9 from "@/assets/home/img-9.png";
+import img9 from "../../assets/home/img-9.png";
 import { motion } from "framer-motion";
 
 const features = [

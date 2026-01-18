@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import img from "@/assets/home/new-img-banner.png";
+import img from "../../assets/home/new-img-banner.png";
 import { motion } from "framer-motion";
 
 const VisionMissionSection: React.FC = () => {

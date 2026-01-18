@@ -1,5 +1,5 @@
 import React from "react";
-import bg3 from "@/assets/home/bg-3.jpg";
+import bg3 from "../../../assets/home/bg-3.jpg";
 import Head from "next/head";
 
 const PrivacyPolicy: React.FC = () => {

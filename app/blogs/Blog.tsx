@@ -4,7 +4,7 @@ import React, { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Home, CalendarDays, User, Clock } from 'lucide-react';
-import Loader from '@/components/Loader';
+import Loader from '../../components/Loader';
 
 // Blog post interface
 interface BlogPost {

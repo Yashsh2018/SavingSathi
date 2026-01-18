@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import an from "@/assets/home/an.jpg";
-import am from "@/assets/home/am.jpg";
+import an from "../../assets/home/an.jpg";
+import am from "../../assets/home/am.jpg";
 
 const TeamSection: React.FC = () => {
   return (

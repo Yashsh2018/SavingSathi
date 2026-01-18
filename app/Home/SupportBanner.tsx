@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ban from "@/assets/home/contact.png";
+import ban from "../../assets/home/contact.png";
 import { motion } from "framer-motion";
 
 const SupportBanner: React.FC = () => {

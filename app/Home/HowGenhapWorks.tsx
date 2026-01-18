@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import mob1 from "@/assets/home/how-works/img-13.jpg";
-import mob2 from "@/assets/home/how-works/img-8.jpg";
+import mob1 from "../../assets/home/how-works/img-13.jpg";
+import mob2 from "../../assets/home/how-works/img-8.jpg";
 import { FaBell, FaStar, FaRegHeart, FaRegCommentDots } from "react-icons/fa";
 import { motion } from "framer-motion";
 

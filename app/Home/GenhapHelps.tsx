@@ -10,8 +10,8 @@ import { FaPhone } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
 import { BsTagFill } from "react-icons/bs";
 import Image from "next/image";
-import help from "@/assets/home/help.png";
-import bg2 from "@/assets/home/bg-2.jpg";
+import help from "../../assets/home/help.png";
+import bg2 from "../../assets/home/bg-2.jpg";
 
 const features = [
   {

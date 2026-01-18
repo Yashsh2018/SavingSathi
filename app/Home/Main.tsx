@@ -1,8 +1,8 @@
 import Image from "next/image";
 // import React from "react";
-import mob1 from "@/assets/home/how-works/‫img-2.jpg";
-import mob2 from "@/assets/home/how-works/img-12.jpg";
-import bg1 from "@/assets/home/bg-1.jpg";
+import mob1 from "../../assets/home/how-works/‫img-2.jpg";
+import mob2 from "../../assets/home/how-works/img-12.jpg";
+import bg1 from "../../assets/home/bg-1.jpg";
 import Link from "next/link";
 import { motion } from "framer-motion";
 

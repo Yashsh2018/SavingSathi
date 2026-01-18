@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { contactAPI } from "@/services/contact";
-import { validateForm } from "@/utils/validation";
-import { ContactFormData, ContactFormErrors } from "@/types/contact";
-import comment from "@/assets/home/comment-2.png";
+import { contactAPI } from "../../services/contact";
+import { validateForm } from "../../utils/validation";
+import { ContactFormData, ContactFormErrors } from "../../types/contact";
+import comment from "../../assets/home/comment-2.png";
 import { motion } from "framer-motion";
 
 interface ContactFormProps {

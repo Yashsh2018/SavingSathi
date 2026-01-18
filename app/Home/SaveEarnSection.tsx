@@ -1,8 +1,8 @@
 // components/SaveEarnSection.tsx
 import React from "react";
-import img1 from "@/assets/home/save/f-icon1.png";
-import img2 from "@/assets/home/save/f-icon2.png";
-import img3 from "@/assets/home/save/f-icon3.png";
+import img1 from "../../assets/home/save/f-icon1.png";
+import img2 from "../../assets/home/save/f-icon2.png";
+import img3 from "../../assets/home/save/f-icon3.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 

@@ -3,13 +3,13 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Button } from '../../../components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '../../../components/ui/sheet';
 import { Moon, Sun, Menu, X, ChevronDown, Sparkles } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from '../../../lib/utils';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
-import logo from "@/assets/logo.png";
+import logo from "../../../assets/logo.png";
 import { usePathname } from 'next/navigation';
 
 const mainNavItems = [

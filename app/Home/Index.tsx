@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Main from './Main';
-import pattern from '@/assets/home/pattern.png';
+import pattern from '../../assets/home/pattern.png';
 import HowGenhapWorks from './HowGenhapWorks';
 import GenhapHelps from './GenhapHelps';
 import SaveEarnSection from './SaveEarnSection';
@@ -12,7 +12,7 @@ import VisionMissionSection from './VisionMissionSection';
 import TeamSection from './TeamSection';
 import SupportBanner from './SupportBanner';
 import ContactForm from './ContactForm';
-import Loader from '@/components/Loader';
+import Loader from '../../components/Loader';
 import Head from 'next/head';
 
 export const metadata = {
