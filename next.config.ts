@@ -5,7 +5,7 @@ const nextConfig = {
   swcMinify: true,
   
 
-  output: 'standalone', // 或 'export' 对于静态站点
+  output: 'standalone', 
   images: {
     unoptimized: true, // Netlify 上需要关闭图片优化
   },
