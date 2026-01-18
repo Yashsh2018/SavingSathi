@@ -3,9 +3,7 @@ import bg2 from "../../assets/home/bg-2.jpg";
 import img2 from "../../assets/home/how-works/‫img-2.jpg";
 import img3 from "../../assets/home/how-works/img-3.jpg"; 
 import img4 from "../../assets/home/how-works/img-14.jpg"; 
-import img5 from "../../assets/home/how-works/img-9.jpg"; 
-// import img6 from "@/assets/home/how-works/img-6.jpg"; 
-// import img7 from "@/assets/home/how-works/img-7.jpg"; 
+import img5 from "../../assets/home/how-works/img-9.jpg";  
 
 const screenshots = [
   {

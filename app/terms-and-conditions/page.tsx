@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Understand SavingSathi’s user terms, how pairing with a Sathi works, offer redemption policies, account rules, and other important legal guidelines.",
   },
   alternates: {
-    canonical: "https://savingsathi.com/terms-and-conditions", // Canonical URL
+    canonical: "https://savingsathi.com/terms-and-conditions",
   },
 };
 
